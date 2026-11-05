@@ -40,9 +40,11 @@ void main() {
     addTearDown(container.dispose);
     final before = await container.read(retail_store_provider.future);
 
+    // Pick a future date that has no seeded open rows, so only our two new rows appear.
+    final pickup = DateTime.now().add(const Duration(days: 7));
     await container.read(retail_store_provider.notifier).send_need_list(
           customer_id: 'C001',
-          pickup_date: DateTime(2026, 11, 5),
+          pickup_date: pickup,
           qty_by_sku: {'ML': 2, 'EG': 1},
         );
 

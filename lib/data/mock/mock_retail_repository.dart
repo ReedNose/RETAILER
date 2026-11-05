@@ -151,6 +151,7 @@ class MockRetailRepository implements RetailRepository {
     if (received > total + 0.005) throw StateError('That is more than the invoice amount');
 
     final transaction_id = _new_id('TRX');
+    var seq = 0; // tiny stagger so rows of the same invoice sort deterministically
     for (final line in lines) {
       _take_from_warehouse(line.batch_id, line.qty);
       _ledger.add(_ledger_row(
@@ -161,6 +162,7 @@ class MockRetailRepository implements RetailRepository {
         batch_id: line.batch_id,
         qty: -line.qty,
         unit_price: line.unit_price,
+        created_at: DateTime.now().add(Duration(milliseconds: seq++)),
       ));
     }
     if (received > 0) {
@@ -272,8 +274,9 @@ class MockRetailRepository implements RetailRepository {
     required String batch_id,
     required int qty,
     required double unit_price,
+    DateTime? created_at,
   }) {
-    final now = DateTime.now();
+    final now = created_at ?? DateTime.now();
     return LedgerRow(
       transaction_id: transaction_id ?? _new_id('L'),
       created_at: now,

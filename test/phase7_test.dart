@@ -84,7 +84,9 @@ void main() {
     final after = await container.read(retail_store_provider.future);
     final sales = group_ledger_invoices(after.ledger, TransactionType.sale);
     expect(sales.length, sales_before + 1);
-    expect(sales.first.rows.length, 2);
+    // Find the new invoice by party: seed sales belong to C001, this one is C002.
+    final pickup_invoice = sales.firstWhere((i) => i.party_id == 'C002');
+    expect(pickup_invoice.rows.length, 2);
   });
 
   test('paying an invoice is capped at what is open', () async {
