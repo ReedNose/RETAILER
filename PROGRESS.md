@@ -84,5 +84,7 @@ available when writing, so run `flutter analyze` and `flutter test` and report e
 - [x] Store: one snapshot call per reload; whole invoices saved in one call
 - [x] Login checks the PIN on the server; logout clears the session and the store
 - [x] Old tests moved to the new repository API
-- [ ] Set backend_url in lib/core/app_config.dart to the deployed /exec URL
-- [ ] Not compiled yet: run `flutter pub get`, `flutter analyze` and `flutter test`
+- [x] Set backend_url in lib/core/app_config.dart to the deployed /exec URL
+- [x] Compiled: `flutter pub get`, `flutter analyze` and `flutter test` run, Riverpod test errors fixed
+- [ ] Deployed: build release APK / web and publish (no CI configured yet)
+- [ ] Field test against the live Apps Script backend (verify Apps Script Web App access is "Anyone")
