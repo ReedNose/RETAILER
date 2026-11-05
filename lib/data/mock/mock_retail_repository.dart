@@ -60,7 +60,7 @@ class MockRetailRepository implements RetailRepository {
     required DateTime pickup_date,
     required Map<String, int> qty_by_sku,
   }) async {
-    // Same rule as the backend: resending replaces the open rows for that day.
+    // Same rule as the backend: resending replaces only the OPEN rows for that day.
     final day = date_only(pickup_date);
     final now = DateTime.now();
     _need_list = [

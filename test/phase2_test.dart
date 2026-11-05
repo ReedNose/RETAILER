@@ -46,7 +46,7 @@ void main() {
           qty_by_sku: {'ML': 2, 'EG': 1},
         );
 
-    final after = container.read(retail_store_provider).requireValue;
+    final after = await container.read(retail_store_provider.future);
     expect(after.need_list.length, before.need_list.length + 2);
     expect(after.total_stock_for_sku('ML'), before.total_stock_for_sku('ML'));
     expect(after.ledger.length, before.ledger.length);

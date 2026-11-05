@@ -7,4 +7,4 @@ const shop_name = 'RUSE Retail';
 const shop_tagline = 'Fresh daily, picked up next morning';
 
 /// The Apps Script web app URL (Deploy > Web app). Paste the deployment URL here.
-const backend_url = 'https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec';
+const backend_url = 'https://script.google.com/macros/s/AKfycby51fAtaBH5KzMMAdljCPHRup5ViqIqnWgtAol7O-vStYGBPPwvjZs-ZZ8EnLGBLAlAYg/exec';
