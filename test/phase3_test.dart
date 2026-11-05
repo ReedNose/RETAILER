@@ -78,7 +78,7 @@ void main() {
       ],
     );
 
-    final after = container.read(retail_store_provider).requireValue;
+    final after = await container.read(retail_store_provider.future);
     expect(after.open_need_rows_on(today).any((r) => r.customer_id == 'C001'), isFalse);
     expect(after.batch_by_id('ML_2402')!.current_qty, 1);
     expect(after.batch_by_id('BR_2404')!.current_qty, 5);
