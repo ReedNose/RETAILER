@@ -1,0 +1,26 @@
+name: retail_preorder_app
+description: Preorder need-lists and expirable-stock inventory for a tiny retail business.
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.6.0 <4.0.0"   # Flutter 3.27+ (CardThemeData, withValues)
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.5.1
+  url_launcher: ^6.3.0      # phase 2 (WhatsApp handoff)
+  google_fonts: ^6.2.1      # Poppins
+  intl: ^0.19.0             # date formatting
+  pdf: ^3.11.1              # phase 5 (invoice PDF)
+  share_plus: ^10.1.4       # phase 5 (share the PDF to WhatsApp)
+  http: ^1.2.2              # phase 8 (calls the Apps Script backend)
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

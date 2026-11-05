@@ -1,0 +1,8 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    # Spec rule: snake_case for every variable, function, and field we author.
+    # Dart default lint wants lowerCamelCase, so it is switched off.
+    non_constant_identifier_names: false
+    # Flutter widget/class names stay PascalCase (the framework requires it).
