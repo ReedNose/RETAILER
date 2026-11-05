@@ -1,0 +1,1 @@
+{"inputs":["/workspaces/RETAILER/web/*/index.html","/workspaces/RETAILER/web/flutter_bootstrap.js","/workspaces/RETAILER/flutter/bin/cache/engine.stamp"],"outputs":["/workspaces/RETAILER/build/web/*/index.html","/workspaces/RETAILER/build/web/flutter_bootstrap.js"],"buildKey":"[{\"compileTarget\":\"dart2js\",\"renderer\":\"canvaskit\",\"mainJsPath\":\"main.dart.js\"},{}]"}
